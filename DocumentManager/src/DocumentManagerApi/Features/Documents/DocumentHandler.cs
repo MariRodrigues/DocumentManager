@@ -2,6 +2,7 @@
 using DocumentManagerApi.Features.Documents.Commands;
 using DocumentManagerApi.Features.Documents.Interfaces;
 using DocumentManagerApi.Features.Documents.Queries;
+using DocumentManagerApi.Filters.Exceptions;
 using DocumentManagerApi.Shared;
 
 namespace DocumentManagerApi.Features.Documents
@@ -30,7 +31,7 @@ namespace DocumentManagerApi.Features.Documents
 
             if (document == null)
             {
-                return new ResponseApi<Document>(false, "Documento não encontrado.");
+                throw new NotFoundException("Documento não encontrado.");
             }
 
             return new ResponseApi<Document>(true, document);

@@ -1,5 +1,6 @@
 ﻿using DocumentManagerApi.Features.Documents.Commands;
 using DocumentManagerApi.Features.Documents.Queries;
+using DocumentManagerApi.Filters.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -54,7 +55,7 @@ namespace DocumentManagerApi.Features.Documents
 
                 if (!authorizationResult.Succeeded)
                 {
-                    return StatusCode(403);
+                    throw new DocumentConfidentialException("Você não tem permissão para visualizar esse documento.");
                 }
             }
 
