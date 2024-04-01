@@ -30,7 +30,7 @@ A API utiliza SQL Server. Modifique a string de conexão no arquivo `appsettings
 ```
 ## Integração com UserManager API para Autenticação
 
-A DocumentManager API trabalha em conjunto com a UserManager API para autenticação de usuários.
+A DocumentManager API trabalha em conjunto com a [UserManager API](https://github.com/MariRodrigues/UserManager) para autenticação de usuários.
 
 ### Autenticação via UserManager API
 - **Geração e Uso de Tokens**: A DocumentManager API não gera seus próprios tokens de acesso. Em vez disso, utiliza tokens JWT gerados pela [UserManager API](https://github.com/MariRodrigues/UserManager).
@@ -38,7 +38,7 @@ A DocumentManager API trabalha em conjunto com a UserManager API para autentica�
 - **Procedimento de Login**: Os usuários devem primeiro autenticar-se na UserManager API, onde suas credenciais são verificadas e um token JWT é emitido. Com este token, eles podem então acessar endpoints protegidos na DocumentManager API.
 
 ### Configuração da Chave JWT
-É crucial que a `SecretKey` utilizada para a geração de tokens na UserManager API seja exatamente a mesma configurada na DocumentManager API. Isso assegura a validade e a segurança na comunicação entre as duas APIs.
+É necessário que a `SecretKey` utilizada para a geração de tokens na UserManager API seja a mesma configurada na DocumentManager API. Isso assegura a validade e a segurança na comunicação entre as duas APIs.
 ```json
 "JwtSettings": {
   "SecretKey": "<mesma-chave-secreta-utilizada-na-UserManager>"
