@@ -1,7 +1,7 @@
 # DocumentManager API
 
 ## Sobre o Projeto
-DocumentManager é uma API REST construída com .NET 8 para gerenciamento de documentos, oferecendo funcionalidades de armazenamento e compartilhamento com foco em segurança e controle de acesso.
+DocumentManager é uma API REST construída com .NET 8 para gerenciamento de documentos, oferecendo funcionalidades de armazenamento e compartilhamento com foco em segurança e controle de acesso
 
 ## Funcionalidades
 - **POST - Criação de documentos**:
